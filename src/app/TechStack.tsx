@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import FadeIn from "react-fade-in";
 
 const stacks = [
   {
@@ -55,15 +56,14 @@ const stacks = [
   },
 ];
 
-const stacks2 = [];
-
 export default function TechStack() {
-  const [isIntersecting, setIsIntersecting] = useState(false);
   const techRef = useRef<HTMLDivElement | null>(null);
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const [, updateState] = useState<{}>();
+  const forceUpdate = useCallback(() => updateState({}), []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries, observer) => {
-      console.log({ entries });
+    const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
       setIsIntersecting(entry.isIntersecting);
     });
@@ -73,31 +73,40 @@ export default function TechStack() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    forceUpdate();
+  }, [isIntersecting]);
+
   return (
-    <section className="mt-36">
+    <section className="mt-64">
       <h3 className="text-4xl font-mono mb-20">Tech Stack</h3>
       <div className="flex items-center w-full">
-        <div ref={techRef} className="grid grid-cols-2 gap-x-8 gap-y-8 w-full">
-          {stacks.map(({ title, url, percentage }) => (
-            <div key={title} className="flex items-center justify-center">
-              {/* icon */}
-              <div className="flex flex-col justify-center items-center w-28">
-                <img title={title} src={url} />
-                <h5 className="mt-3">{title}</h5>
+        <div ref={techRef} className="w-full">
+          <FadeIn
+            className="grid grid-cols-2 gap-x-8 gap-y-8 w-full"
+            visible={isIntersecting}
+          >
+            {stacks.map(({ title, url, percentage }) => (
+              <div key={title} className="flex items-center justify-center">
+                {/* icon */}
+                <div className="flex flex-col justify-center items-center w-28">
+                  <img title={title} src={url} className="w-8" />
+                  <h5 className="mt-3">{title}</h5>
+                </div>
+                {/* bar */}
+                <div className="prgoress w-80 mx-8 flex items-center h-3 bg-primary rounded-xl">
+                  <div
+                    className="prgoress-bar"
+                    style={{ width: isIntersecting ? percentage : "0" }}
+                  ></div>
+                </div>
+                {/* number */}
+                <span className="font-serif text-lg tracking-widest">
+                  {percentage}
+                </span>
               </div>
-              {/* bar */}
-              <div className="prgoress w-80 mx-8 flex items-center h-4 bg-primary rounded-xl">
-                <div
-                  className="prgoress-bar"
-                  style={{ width: isIntersecting ? percentage : "0" }}
-                ></div>
-              </div>
-              {/* number */}
-              <span className="font-serif text-lg tracking-widest">
-                {percentage}
-              </span>
-            </div>
-          ))}
+            ))}
+          </FadeIn>
         </div>
       </div>
     </section>

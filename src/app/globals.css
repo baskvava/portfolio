@@ -9,9 +9,11 @@
     --text: #081616;
     --background: #e1f3f4;
     /* --primary: #50eda3; */
-    --primary: #32888b;
+    /* --primary: #32888b; */
+    --primary: #16cad0;
     --secondary: #b9f6f8;
-    --accent: #16cad0;
+    /* --accent: #16cad0; */
+    --accent: #32888b;
   }
   .dark {
     --text: #e9f7f7;
@@ -58,6 +60,7 @@
   border-right: 0.15em solid var(--accent);
   white-space: nowrap;
   animation: typing 2s steps(20, end) forwards, blinking 1.2s infinite;
+  /* animation-delay: 0.25s; */
   margin: 4px;
   padding: 4px;
 }
@@ -97,4 +100,28 @@
   height: inherit;
   border-radius: 12px;
   transition: width 1s linear 1s;
+}
+
+.portfolio-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://avatars.githubusercontent.com/u/23297498?v=4");
+  width: 250px;
+  height: 250px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.portfolio-text {
+  text-align: center;
+  position: absolute;
+  top: 88%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.portfolio-image-ring {
+  top: -6px;
+  right: -6px;
 }

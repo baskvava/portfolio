@@ -26,7 +26,7 @@ const ThemeButton = () => {
   }
 
   return (
-    <>
+    <div className="flex">
       <ul className="flex gap-4 text-text">
         {buttons.map(({ name }) => (
           <li key={name}>
@@ -47,7 +47,7 @@ const ThemeButton = () => {
           </button>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
