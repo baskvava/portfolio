@@ -91,7 +91,7 @@
   height: 16px;
 }
 
-.prgoress {
+.prgoress-bar {
   background-color: var(--accent);
   width: 0;
   height: inherit;

@@ -86,9 +86,9 @@ export default function TechStack() {
                 <h5 className="mt-3">{title}</h5>
               </div>
               {/* bar */}
-              <div className="prgoressw-80 mx-8 flex items-center h-4 bg-primary rounded-xl">
+              <div className="prgoress w-80 mx-8 flex items-center h-4 bg-primary rounded-xl">
                 <div
-                  className="prgoress"
+                  className="prgoress-bar"
                   style={{ width: isIntersecting ? percentage : "0" }}
                 ></div>
               </div>
