@@ -19,6 +19,9 @@ const config: Config = {
       maxWidth: {
         "8xl": "90rem",
       },
+      transitionProperty: {
+        width: "width",
+      },
     },
   },
   plugins: [],

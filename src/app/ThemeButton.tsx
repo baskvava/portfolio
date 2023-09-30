@@ -6,9 +6,9 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 const buttons = [
   { name: "About" },
+  { name: "Tech Stack" },
   { name: "Experience" },
   { name: "Education" },
-  { name: "Tech Stack" },
   { name: "Project" },
 ];
 
@@ -27,24 +27,26 @@ const ThemeButton = () => {
 
   return (
     <>
-      <ul className="flex gap-4">
+      <ul className="flex gap-4 text-text">
         {buttons.map(({ name }) => (
           <li key={name}>
-            <button className="py-1 px-4 border-2 rounded-full border-background hover:border-accent">
+            <button className="tab" onClick={() => {}}>
               {name}
             </button>
           </li>
         ))}
       </ul>
-      {theme === "light" ? (
-        <button className="pr-6 pl-10" onClick={() => setTheme("dark")}>
-          <MdDarkMode size="1.5em" />
-        </button>
-      ) : (
-        <button className="pr-6 pl-10" onClick={() => setTheme("light")}>
-          <MdLightMode size="1.5em" style={{ color: "#e8fde9" }} />
-        </button>
-      )}
+      <div className="theme flex justify-center">
+        {theme === "light" ? (
+          <button className="pr-6 pl-6" onClick={() => setTheme("dark")}>
+            <MdDarkMode size="1.5em" />
+          </button>
+        ) : (
+          <button className="pr-6 pl-6" onClick={() => setTheme("light")}>
+            <MdLightMode size="1.5em" />
+          </button>
+        )}
+      </div>
     </>
   );
 };

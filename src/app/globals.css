@@ -4,25 +4,97 @@
 
 @layer base {
   :root {
-    --text: #021703;
-    --background: #edfded;
-    --primary: #50eda3;
+    /* --text: #021703; */
+    /* --background: #edfded; */
+    --text: #081616;
+    --background: #e1f3f4;
+    /* --primary: #50eda3; */
+    --primary: #32888b;
     --secondary: #b9f6f8;
     --accent: #16cad0;
   }
   .dark {
-    --text: #e8fde9;
-    --background: #021202;
-    --primary: #12af66;
+    --text: #e9f7f7;
+    /* --text: #e8fde9; */
+    /* --background: #021202;
+     */
+    --background: #0b1d1e;
+    /* --primary: #12af66; */
+    -primary: #32888b;
     --secondary: #074345;
     --accent: #2fe3e9;
   }
 }
 
-circle,
-rect,
-line {
-  stroke-width: 10px;
-  stroke-linecap: round;
-  fill: transparent;
+.tab {
+  position: relative;
+}
+
+.tab::before {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  content: "";
+  height: 1px;
+  background: var(--accent);
+}
+
+.tab:hover {
+  color: var(--accent);
+  transition: all 0.2s ease-in-out 0.1s;
+}
+
+.tab:hover::before {
+  width: 100%;
+  transition: all 0.2s ease-in 0.1s;
+}
+
+.theme > button:hover {
+  color: var(--accent);
+}
+
+.type-out {
+  overflow: hidden;
+  border-right: 0.15em solid var(--accent);
+  white-space: nowrap;
+  animation: typing 2s steps(20, end) forwards, blinking 1.2s infinite;
+  margin: 4px;
+  padding: 4px;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinking {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: var(--accent);
+  }
+}
+
+.f-icon:after {
+  content: "";
+  background-image: url("https://www.vectorlogo.zone/logos/facebook/facebook-tile.svg");
+  background-size: 16px;
+  display: inline-block;
+  margin-left: 4px;
+  margin-bottom: -2px;
+  width: 16px;
+  height: 16px;
+}
+
+.prgoress {
+  background-color: var(--accent);
+  width: 0;
+  height: inherit;
+  border-radius: 12px;
+  transition: width 1s linear 1s;
 }
