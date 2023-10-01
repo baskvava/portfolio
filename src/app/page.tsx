@@ -1,5 +1,6 @@
 import About from "./About";
 import Experience from "./Experience";
+import Projects from "./Projects";
 import TechStack from "./TechStack";
 import ThemeButton from "./ThemeButton";
 
@@ -14,6 +15,7 @@ export default function Home() {
         {/* <section className="py-24 max-w-3xl flex flex-wrap"> */}
         <About />
         <Experience />
+        <Projects />
         <TechStack />
       </main>
     </div>

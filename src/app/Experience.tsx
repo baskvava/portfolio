@@ -185,7 +185,11 @@ export default function Experience() {
           ))}
         </FadeIn>
         {/* contnet */}
-        <FadeIn className="w-3/5 pl-24 pr-32" delay={2200}>
+        <FadeIn
+          className="w-3/5 pl-24 pr-32"
+          delay={2200}
+          visible={isIntersecting}
+        >
           <div className="flex flex-col items-start">
             {companies.map(({ compnayName, time, description }) => (
               <section key={compnayName}>

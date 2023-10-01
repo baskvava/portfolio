@@ -58,10 +58,32 @@ export default function About() {
           </div>
         </FadeIn>
         <FadeIn delay={1200}>
-          <div className="portfolio-image w-52 h-52 rounded-2xl">
+          <div className="relative">
+            <img
+              className="w-52 h-52 rounded-2xl opacity-90 dark:opacity-70"
+              src="https://avatars.githubusercontent.com/u/23297498?v=4"
+            />
             <div className="portfolio-text font-mono tracking-widest">
               <button
-                className="rounded-md shadow ring-2 ring-primary border-primary text-primary px-6"
+                className="rounded-md shadow ring-2 ring-accent text-accent"
+                onClick={() => {
+                  window.open("https://www.linkedin.com/in/ying-hsuan-chen1/");
+                }}
+              >
+                <span className="px-4 py-1">Hire me</span>
+                <span className="portfolio-image-ring inline-block absolute">
+                  <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+          {/* <div className="portfolio-image w-52 h-52 rounded-2xl">
+            <div className="portfolio-text font-mono tracking-widest">
+              <button
+                className="rounded-md shadow ring-2 ring-text border-text text-text px-6"
                 onClick={() => {
                   window.open("https://www.linkedin.com/in/ying-hsuan-chen1/");
                 }}
@@ -75,7 +97,7 @@ export default function About() {
                 </span>
               </button>
             </div>
-          </div>
+          </div> */}
         </FadeIn>
       </div>
     </section>

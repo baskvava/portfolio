@@ -11,9 +11,11 @@
     /* --primary: #50eda3; */
     /* --primary: #32888b; */
     --primary: #16cad0;
-    --secondary: #b9f6f8;
+    /* --secondary: #b9f6f8; */
+    --secondary: #dbeced;
     /* --accent: #16cad0; */
     --accent: #32888b;
+    --light: #e1f3f4;
   }
   .dark {
     --text: #e9f7f7;
@@ -22,9 +24,11 @@
      */
     --background: #0b1d1e;
     /* --primary: #12af66; */
-    -primary: #32888b;
-    --secondary: #074345;
+    /* -primary: #32888b; */
+    --primary: #235154;
+    --secondary: #162627;
     --accent: #2fe3e9;
+    --light: #0b1d1e;
   }
 }
 
@@ -100,17 +104,6 @@
   height: inherit;
   border-radius: 12px;
   transition: width 1s linear 1s;
-}
-
-.portfolio-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("https://avatars.githubusercontent.com/u/23297498?v=4");
-  width: 250px;
-  height: 250px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
 }
 
 .portfolio-text {
