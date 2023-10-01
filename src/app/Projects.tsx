@@ -8,7 +8,7 @@ const cards = [
   {
     title: "Portfolio",
     url: "https://baskvava.github.io/portfolio/",
-    imgUrl: "https://baskvava.github.io/resume/react-video-modal.png",
+    imgUrl: "https://baskvava.github.io/portfolio/portfolio.png",
     disabled: false,
     description: (
       <>
