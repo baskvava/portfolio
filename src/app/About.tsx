@@ -23,7 +23,7 @@ export default function About() {
       <div className="flex gap-x-52 items-end">
         <FadeIn delay={200}>
           <div className="flex items-center">
-            <h5 className="mb-2 text-1xl">Hi, I'm</h5>
+            <h5 className="mb-2 text-1xl">Hi, I&apos;m</h5>
           </div>
           <div className="flex items-center text-6xl">
             <h3 className="font-bold text-text">a</h3>
@@ -37,9 +37,9 @@ export default function About() {
             making impact web apps to the world
           </h3>
           <p className="max-w-2xl mt-5 mb-2 text-1xl f-icon">
-            I'm passionate about the latest front-end technologies and trends,
-            and eager to learn new things. Experience on large-scale system such
-            as Facebook
+            I&apos;m passionate about the latest front-end technologies and
+            trends, and eager to learn new things. Experience on large-scale
+            system such as Facebook
           </p>
           <div className="flex items-center">
             <div className="mr-2">

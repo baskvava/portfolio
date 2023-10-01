@@ -75,7 +75,7 @@ export default function TechStack() {
 
   useEffect(() => {
     forceUpdate();
-  }, [isIntersecting]);
+  }, [isIntersecting, forceUpdate]);
 
   return (
     <section className="mt-64">
