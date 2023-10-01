@@ -8,12 +8,12 @@ const nextConfig = {
       {
         /** ASSET PREFIX */
         source: `${BASE_PREFIX_FOR_APP}/_next/:path*`,
-        destination: "/_next/:path*",
+        destination: "/out",
       },
       {
         /** IMAGE PREFIX */
         source: `${BASE_PREFIX_FOR_APP}/images/:query*`,
-        destination: "/_next/image/:query*",
+        destination: "/out",
       },
       /** API PREFIX */
       {
