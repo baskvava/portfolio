@@ -80,7 +80,7 @@ const companies = [
     ],
   },
   {
-    compnayName: "Garmin (Facebook)",
+    compnayName: "Garmin",
     title: "Engineer Staff II",
     time: "Aug, 2017 - Aug, 2019",
     description: [
