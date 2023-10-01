@@ -2,6 +2,8 @@
 
 This is my portfolio project, build by Next.js and Tailwind CSS.
 
+[<img src="https://baskvava.github.io/portfolio/portfolio-3.png">](https://baskvava.github.io/portfolio/)
+
 ## Welcome to Fork and PR
 
 - Welcome to fork this project if you like. 
