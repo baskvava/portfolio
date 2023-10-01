@@ -1,4 +1,5 @@
 {
+  "homepage": "http://baskvava.github.io/portfolio",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
@@ -6,10 +7,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
-    "framer-motion": "^10.16.4",
     "next": "latest",
     "next-themes": "^0.2.1",
     "react": "latest",
