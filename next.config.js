@@ -1,11 +1,33 @@
 /** @type {import('next').NextConfig} */
+
+const BASE_PREFIX_FOR_APP = "/portfolio";
+
 const nextConfig = {
-  /**
-   * Enable static exports for the App Router.
-   *
-   * @see https://nextjs.org/docs/pages/building-your-application/deploying/static-exports
-   */
-  output: "export",
+  async rewrites() {
+    return [
+      {
+        /** ASSET PREFIX */
+        source: `${BASE_PREFIX_FOR_APP}/_next/:path*`,
+        destination: "/_next/:path*",
+      },
+      {
+        /** IMAGE PREFIX */
+        source: `${BASE_PREFIX_FOR_APP}/images/:query*`,
+        destination: "/_next/image/:query*",
+      },
+      /** API PREFIX */
+      {
+        source: `${BASE_PREFIX_FOR_APP}/api/:path*`,
+        destination: "/api/:path*",
+      },
+    ];
+  },
+  // /**
+  //  * Enable static exports for the App Router.
+  //  *
+  //  * @see https://nextjs.org/docs/pages/building-your-application/deploying/static-exports
+  //  */
+  // output: "export",
 
   /**
    * Set base path. This is usually the slug of your repository.
