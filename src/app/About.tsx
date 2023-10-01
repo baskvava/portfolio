@@ -70,7 +70,9 @@ export default function About() {
                   window.open("https://www.linkedin.com/in/ying-hsuan-chen1/");
                 }}
               >
-                <span className="px-4 py-1">Hire me</span>
+                <span className="px-4 py-1 whitespace-nowrap">
+                  Open to work
+                </span>
                 <span className="portfolio-image-ring inline-block absolute">
                   <span className="relative flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
