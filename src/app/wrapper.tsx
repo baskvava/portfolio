@@ -101,10 +101,10 @@ export default function Wrapper({ views }: { views: number }) {
             </p>
             <p className="flex gap-2">
               Copyright © ${new Date().getFullYear()} Clara Chen.{" "}
-              <span className="flex items-center justify-center gap-2">
+              {/* <span className="flex items-center justify-center gap-2">
                 <AiOutlineEye size="1.6em" />
                 {views}
-              </span>
+              </span> */}
             </p>
           </footer>
         </div>
