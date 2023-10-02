@@ -10,7 +10,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col justify-start bg-background items-center min-h-screen w-full">
-      {portfolio?.views ? <Wrapper views={2} /> : <></>}
+      {portfolio?.views ? <Wrapper views={portfolio.views} /> : <></>}
     </div>
   );
 }
