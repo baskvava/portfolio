@@ -3,25 +3,26 @@
 const BASE_PREFIX_FOR_APP = "/portfolio";
 
 const nextConfig = {
-  // async rewrites() {
-  //   return [
-  //     {
-  //       /** ASSET PREFIX */
-  //       source: `${BASE_PREFIX_FOR_APP}/_next/:path*`,
-  //       destination: "/export",
-  //     },
-  //     {
-  //       /** IMAGE PREFIX */
-  //       source: `${BASE_PREFIX_FOR_APP}/images/:query*`,
-  //       destination: "/export",
-  //     },
-  //     /** API PREFIX */
-  //     {
-  //       source: `${BASE_PREFIX_FOR_APP}/api/:path*`,
-  //       destination: "/api/:path*",
-  //     },
-  //   ];
-  // },
+  async rewrites() {
+    return [
+      // {
+      //   /** ASSET PREFIX */
+      //   source: `${BASE_PREFIX_FOR_APP}/_next/:path*`,
+      //   destination: "/out",
+      // },
+      // {
+      //   /** IMAGE PREFIX */
+      //   source: `${BASE_PREFIX_FOR_APP}/images/:query*`,
+      //   destination: "/out",
+      // },
+      /** API PREFIX */
+      {
+        source: `${BASE_PREFIX_FOR_APP}/api/:path*`,
+        destination: "/api/:path*",
+      },
+    ];
+  },
+  // distDir: "build",
   // async redirects() {
   //   return [
   //     {
@@ -37,7 +38,7 @@ const nextConfig = {
   //  *
   //  * @see https://nextjs.org/docs/pages/building-your-application/deploying/static-exports
   //  */
-  output: "export",
+  // output: "export",
 
   /**
    * Set base path. This is usually the slug of your repository.
