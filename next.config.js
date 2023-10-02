@@ -8,12 +8,12 @@ const nextConfig = {
       {
         /** ASSET PREFIX */
         source: `${BASE_PREFIX_FOR_APP}/_next/:path*`,
-        destination: "/out",
+        destination: "/export",
       },
       {
         /** IMAGE PREFIX */
         source: `${BASE_PREFIX_FOR_APP}/images/:query*`,
-        destination: "/out",
+        destination: "/export",
       },
       /** API PREFIX */
       {
@@ -22,6 +22,16 @@ const nextConfig = {
       },
     ];
   },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: `${BASE_PREFIX_FOR_APP}/api/:path*`,
+  //       destination: "/api/:path*",
+  //       permanent: true,
+  //     },
+  //   ];
+  // },
+
   // /**
   //  * Enable static exports for the App Router.
   //  *

@@ -39,12 +39,11 @@ export default function Wrapper({ views }: { views: number }) {
     if (arrowRef.current) {
       observer.observe(arrowRef.current);
     }
-    // addViews();
+    addViews();
     return () => observer.disconnect();
   }, []);
 
   const scroll = (id: string) => {
-    // const id = e.currentTarget.getAttribute("href").slice(1);
     const targetAnchor = document.getElementById(id);
     if (!targetAnchor) {
       return;
@@ -66,9 +65,7 @@ export default function Wrapper({ views }: { views: number }) {
               {buttons.map(({ id, name }) => (
                 <li key={id}>
                   <button className="tab" onClick={() => scroll(id)}>
-                    {/* <a href={`#${id}`}> */}
                     {name}
-                    {/* </a> */}
                   </button>
                 </li>
               ))}
