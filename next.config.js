@@ -38,7 +38,9 @@ const nextConfig = {
   //  *
   //  * @see https://nextjs.org/docs/pages/building-your-application/deploying/static-exports
   //  */
-  // output: "export",
+  // output: "export",]
+  distDir: "../out",
+  exportTrailingSlash: true,
 
   /**
    * Set base path. This is usually the slug of your repository.
