@@ -20,11 +20,11 @@ const ThemeButton = () => {
   return (
     <div className="theme flex justify-center">
       {theme === "light" ? (
-        <button className="pr-6 pl-6" onClick={() => setTheme("dark")}>
+        <button className="pr-3 pl-6" onClick={() => setTheme("dark")}>
           <MdDarkMode size="1.5em" />
         </button>
       ) : (
-        <button className="pr-6 pl-6" onClick={() => setTheme("light")}>
+        <button className="pr-3 pl-6" onClick={() => setTheme("light")}>
           <MdLightMode size="1.5em" />
         </button>
       )}

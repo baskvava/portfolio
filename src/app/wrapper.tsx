@@ -71,6 +71,9 @@ export default function Wrapper({ views }: { views: number }) {
               ))}
             </ul>
             <ThemeButton />
+            <a href="https://github.com/baskvava" target="_blank">
+              <AiFillGithub size="1.6em" />
+            </a>
           </div>
         </nav>
         <div id="about">
