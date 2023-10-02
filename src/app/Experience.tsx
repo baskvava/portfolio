@@ -128,22 +128,22 @@ export default function Experience() {
 
   return (
     <section className="mt-16 md:mt-36">
-      <h3 className="text-2xl md:text-4xl font-mono mb-10 md:mb-20">
+      <h3 className="text-2xl xl:text-4xl font-mono mb-10 xl:mb-20">
         Experience
       </h3>
       <div
         ref={timelineRef}
-        className="flex flex-col md:flex-row items-center w-full"
+        className="flex flex-col xl:flex-row items-center w-full"
       >
         {/* time line */}
         <FadeIn
-          className="w-full overflow-x-scroll md:overflow-hidden mb-8 md:mb-0 md:w-80 flex flex-row md:flex-col"
+          className="w-full overflow-x-scroll xl:overflow-hidden xl-8 xl:mb-0 xl:w-80 flex flex-row xl:flex-col"
           delay={500}
           visible={isIntersecting}
         >
           {companies.map(({ compnayName, title, time }, idx) => (
             <div
-              className="flex flex-col items-end justify-end h-full md:h-fit"
+              className="flex flex-col items-end justify-end h-full xl:h-fit"
               key={compnayName}
             >
               {/* company discription & dot */}
@@ -152,9 +152,9 @@ export default function Experience() {
                 <button
                   className={[
                     "text-start",
-                    "md:text-end",
+                    "xl:text-end",
                     "mr-0",
-                    "md:mr-6",
+                    "xl:mr-6",
                     "px-4",
                     "py-2",
                     "font-mono",
@@ -174,10 +174,10 @@ export default function Experience() {
                   onClick={() => setSelected(compnayName)}
                 >
                   <div className="text-lg text-accent">{compnayName}</div>
-                  <div className="hidden md:flex text-sm">{title}</div>
+                  <div className="hidden xl:flex text-sm">{title}</div>
                 </button>
                 {/* dot */}
-                <div className="hidden md:flex items-center justify-center w-7 h-7">
+                <div className="hidden xl:flex items-center justify-center w-7 h-7">
                   {/* <span className="inline-block w-4 h-4 bg-primary rounded-full"></span> */}
                   {selected === compnayName ? (
                     <span className="relative flex h-3 w-3">
@@ -191,14 +191,14 @@ export default function Experience() {
               </div>
               {/* line */}
               {idx < companies.length - 1 && (
-                <span className="hidden md:inline-block w-1 h-16 bg-primary mr-3"></span>
+                <span className="hidden xl:inline-block w-1 h-16 bg-primary mr-3"></span>
               )}
             </div>
           ))}
         </FadeIn>
         {/* contnet */}
         <FadeIn
-          className="w-full md:w-3/5 px-4 md:pl-24 md:pr-32"
+          className="w-full xl:w-3/5 px-4 xl:pl-24 xl:pr-32"
           delay={2200}
           visible={isIntersecting}
         >
@@ -211,7 +211,7 @@ export default function Experience() {
                       <span className="text-lg text-accent mr-4">
                         {compnayName}
                       </span>
-                      <span className="mr-4 md:mr-0 md:hidden">{title}</span>
+                      <span className="mr-4 xl:mr-0 xl:hidden">{title}</span>
                       <span>{time}</span>
                     </h5>
                     <ul className="list-outside list-disc leading-relaxed text-lg mt-4">
@@ -225,30 +225,6 @@ export default function Experience() {
                 )}
               </section>
             ))}
-            {/* <h5>
-            <span className="text-lg text-accent mr-4">Fortinet</span>
-            <span>Jan, 2023 - Now</span>
-          </h5>
-          <ul className="list-outside list-disc leading-relaxed text-lg mt-4">
-            <li className="mb-4">
-              Led a successful redesign of a React project, leveraging Redux
-              Toolkit, resulting in an{" "}
-              <span className="underline decoration-wavy decoration-primary text-accent">
-                impressive 80% reduction in development time
-              </span>{" "}
-              and significantly improved maintenance efficiency
-            </li>
-            <li className="mb-4">
-              Drove regular code review sessions, providing actionable feedback
-              that led to reduction in bugs and enhanced codebase stability
-            </li>
-            <li className="mb-4">
-              Led a cross-functional team in overhauling a legacy Angular
-              project into a performant React application. Integrated Webpack,
-              Prettier, ESLint, and StyleLint, resulting in reduction in bundle
-              size and improvement in initial load times.
-            </li>
-          </ul> */}
           </div>
         </FadeIn>
       </div>
