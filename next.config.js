@@ -22,6 +22,7 @@ const nextConfig = {
       },
     ];
   },
+  outDir: "out",
   // /**
   //  * Enable static exports for the App Router.
   //  *
