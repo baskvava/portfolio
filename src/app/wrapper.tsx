@@ -12,6 +12,7 @@ import {
   AiOutlineArrowUp,
   AiOutlineEye,
 } from "react-icons/ai";
+import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
 const buttons = [
   { id: "about", name: "About" },
@@ -21,6 +22,7 @@ const buttons = [
 ];
 
 export default function Wrapper({ views }: { views: number }) {
+  const [isOpen, setIsOpen] = useState(false);
   const arrowRef = useRef<HTMLDivElement | null>(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
 
@@ -58,9 +60,79 @@ export default function Wrapper({ views }: { views: number }) {
   return (
     <main className="max-w-8xl w-full max-auto py-5 px-12">
       <div className="max-w-8xl w-full">
-        <nav className="h-fit flex justify-between items-center">
+        {/* hamburger menu */}
+        <nav
+          className={[
+            "flex",
+            "md:hidden",
+            "h-5",
+            !isOpen ? "justify-between" : "justify-end",
+            "items-center",
+          ]
+            .filter(Boolean)
+            .join(" ")}
+        >
+          {!isOpen && (
+            <h5 className="font-mono text-accent text-lg">Clara Chen</h5>
+          )}
+
+          <section className="md:hidden flex text-text">
+            <button
+              className="space-y-2 z-50"
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+            >
+              {!isOpen ? (
+                <div className="flex items-center justify-center gap-4">
+                  <ThemeButton />
+                  <a
+                    href="https://github.com/baskvava"
+                    target="_blank"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                    }}
+                  >
+                    <AiFillGithub size="1.6em" />
+                  </a>
+                  <RxHamburgerMenu size="1.2em" />
+                </div>
+              ) : (
+                <RxCross1 size="1.2em" />
+              )}
+            </button>
+
+            {/* open menu */}
+            {isOpen && (
+              <div className="absolute left-0 top-0 bg-secondary w-full">
+                {/* <ul className="flex flex-col items-center justify-between min-h-[250px]">
+                  <li className="border-b border-gray-400 my-8 uppercase">
+                    <a href="/about">About</a>
+                  </li>
+                  <li className="border-b border-gray-400 my-8 uppercase">
+                    <a href="/portfolio">Portfolio</a>
+                  </li>
+                  <li className="border-b border-gray-400 my-8 uppercase">
+                    <a href="/contact">Contact</a>
+                  </li>
+                </ul> */}
+                <ul className="flex flex-col items-center justify-evenly min-h-[250px]">
+                  {buttons.map(({ id, name }) => (
+                    <li key={id}>
+                      <button className="tab" onClick={() => scroll(id)}>
+                        {name}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </section>
+        </nav>
+        {/* normal menu */}
+        <nav className="hidden h-fit md:flex justify-between items-center">
           <h5 className="font-mono text-accent text-lg">Clara Chen</h5>
-          <div className="flex">
+          <div className="hidden md:flex">
             <ul className="flex gap-4 text-text">
               {buttons.map(({ id, name }) => (
                 <li key={id}>

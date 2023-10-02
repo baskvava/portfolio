@@ -79,18 +79,20 @@ export default function TechStack() {
 
   return (
     <section className="mt-64">
-      <h3 className="text-4xl font-mono mb-20">Tech Stack</h3>
+      <h3 className="text-2xl md:text-4xl font-mono mb-10 md:mb-20">
+        Tech Stack
+      </h3>
       <div className="flex items-center w-full">
         <div ref={techRef} className="w-full">
           <FadeIn
-            className="grid grid-cols-2 gap-x-8 gap-y-8 w-full"
+            className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 w-full"
             visible={isIntersecting}
           >
             {stacks.map(({ title, url, percentage }) => (
               <div key={title} className="flex items-center justify-center">
                 {/* icon */}
                 <div className="flex flex-col justify-center items-center w-28">
-                  <img title={title} src={url} className="w-8" />
+                  <img title={title} src={url} className="w-6 md:w-8" />
                   <h5 className="mt-3">{title}</h5>
                 </div>
                 {/* bar */}

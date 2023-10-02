@@ -20,13 +20,13 @@ export default function About() {
   }, []);
 
   return (
-    <section className="py-48 text-text tracking-widest">
-      <div className="flex gap-x-52 items-end">
-        <FadeIn delay={200}>
+    <section className="py-24 md:py-48 text-text tracking-widest">
+      <div className="flex flex-col md:flex-row gap-0 md:gap-x-52 md:items-end">
+        <FadeIn delay={200} className="mb-12 md:mb-0">
           <div className="flex items-center">
-            <h5 className="mb-2 text-1xl">Hi, I&apos;m</h5>
+            <h5 className="mb-2 text-base md:text-1xl">Hi, I&apos;m</h5>
           </div>
-          <div className="flex items-center text-6xl">
+          <div className="flex items-center text-3xl md:text-6xl">
             <h3 className="font-bold text-text">a</h3>
             <h3 ref={feRef} className="inline-block text-accent">
               {isIntersecting && (
@@ -34,10 +34,10 @@ export default function About() {
               )}
             </h3>
           </div>
-          <h3 className="max-w-3xl font-bold text-6xl text-text mb-4 leading-normal">
+          <h3 className="max-w-3xl font-bold text-3xl md:text-6xl text-text mb-4 leading-normal">
             making impact web apps to the world
           </h3>
-          <p className="max-w-2xl mt-5 mb-2 text-1xl f-icon">
+          <p className="max-w-2xl mt-5 mb-2 text-base md:text-1xl f-icon">
             I&apos;m passionate about the latest front-end technologies and
             trends, and eager to learn new things. Experience on large-scale
             system such as Facebook
@@ -59,7 +59,7 @@ export default function About() {
           </div>
         </FadeIn>
         <FadeIn delay={1200}>
-          <div className="relative">
+          <div className="relative w-fit">
             <img
               className="w-52 h-52 rounded-2xl opacity-90 dark:opacity-70"
               src="https://avatars.githubusercontent.com/u/23297498?v=4"

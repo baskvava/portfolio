@@ -128,13 +128,22 @@ export default function Experience() {
 
   return (
     <section className="mt-36">
-      <h3 className="text-4xl font-mono mb-20">Experience</h3>
-      <div ref={timelineRef} className="flex items-center w-full">
+      <h3 className="text-2xl md:text-4xl font-mono mb-10 md:mb-20">
+        Experience
+      </h3>
+      <div
+        ref={timelineRef}
+        className="flex flex-col md:flex-row items-center w-full"
+      >
         {/* time line */}
-        <FadeIn className="w-80" delay={500} visible={isIntersecting}>
+        <FadeIn
+          className="w-full overflow-x-scroll md:overflow-hidden mb-8 md:mb-0 md:w-80 flex flex-row md:flex-col"
+          delay={500}
+          visible={isIntersecting}
+        >
           {companies.map(({ compnayName, title, time }, idx) => (
             <div
-              className="flex flex-col items-end justify-end"
+              className="flex flex-col items-end justify-end h-full md:h-fit"
               key={compnayName}
             >
               {/* company discription & dot */}
@@ -142,8 +151,10 @@ export default function Experience() {
                 {/* company discription */}
                 <button
                   className={[
-                    "text-end",
-                    "mr-6",
+                    "text-start",
+                    "md:text-end",
+                    "mr-0",
+                    "md:mr-6",
                     "px-4",
                     "py-2",
                     "font-mono",
@@ -163,10 +174,10 @@ export default function Experience() {
                   onClick={() => setSelected(compnayName)}
                 >
                   <div className="text-lg text-accent">{compnayName}</div>
-                  <div className="text-sm">{title}</div>
+                  <div className="hidden md:flex text-sm">{title}</div>
                 </button>
                 {/* dot */}
-                <div className="flex items-center justify-center w-7 h-7">
+                <div className="hidden md:flex items-center justify-center w-7 h-7">
                   {/* <span className="inline-block w-4 h-4 bg-primary rounded-full"></span> */}
                   {selected === compnayName ? (
                     <span className="relative flex h-3 w-3">
@@ -180,19 +191,19 @@ export default function Experience() {
               </div>
               {/* line */}
               {idx < companies.length - 1 && (
-                <span className="inline-block w-1 h-16 bg-primary mr-3"></span>
+                <span className="hidden md:inline-block w-1 h-16 bg-primary mr-3"></span>
               )}
             </div>
           ))}
         </FadeIn>
         {/* contnet */}
         <FadeIn
-          className="w-3/5 pl-24 pr-32"
+          className="w-full md:w-3/5 px-4 md:pl-24 md:pr-32"
           delay={2200}
           visible={isIntersecting}
         >
           <div className="flex flex-col items-start">
-            {companies.map(({ compnayName, time, description }) => (
+            {companies.map(({ compnayName, time, title, description }) => (
               <section key={compnayName}>
                 {selected === compnayName && (
                   <>
@@ -200,6 +211,7 @@ export default function Experience() {
                       <span className="text-lg text-accent mr-4">
                         {compnayName}
                       </span>
+                      <span className="mr-4 md:mr-0 md:hidden">{title}</span>
                       <span>{time}</span>
                     </h5>
                     <ul className="list-outside list-disc leading-relaxed text-lg mt-4">
