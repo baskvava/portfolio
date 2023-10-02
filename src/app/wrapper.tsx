@@ -105,21 +105,16 @@ export default function Wrapper({ views }: { views: number }) {
             {/* open menu */}
             {isOpen && (
               <div className="absolute left-0 top-0 bg-secondary w-full">
-                {/* <ul className="flex flex-col items-center justify-between min-h-[250px]">
-                  <li className="border-b border-gray-400 my-8 uppercase">
-                    <a href="/about">About</a>
-                  </li>
-                  <li className="border-b border-gray-400 my-8 uppercase">
-                    <a href="/portfolio">Portfolio</a>
-                  </li>
-                  <li className="border-b border-gray-400 my-8 uppercase">
-                    <a href="/contact">Contact</a>
-                  </li>
-                </ul> */}
                 <ul className="flex flex-col items-center justify-evenly min-h-[250px]">
                   {buttons.map(({ id, name }) => (
                     <li key={id}>
-                      <button className="tab" onClick={() => scroll(id)}>
+                      <button
+                        className="tab"
+                        onClick={() => {
+                          scroll(id);
+                          setIsOpen(!isOpen);
+                        }}
+                      >
                         {name}
                       </button>
                     </li>
