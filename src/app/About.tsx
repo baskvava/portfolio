@@ -20,13 +20,13 @@ export default function About() {
   }, []);
 
   return (
-    <section className="py-24 md:py-48 text-text tracking-widest">
+    <section className="pt-24 pb-0 md:pt-48 md:pb-48 text-text tracking-widest">
       <div className="flex flex-col md:flex-row gap-0 md:gap-x-52 md:items-end">
         <FadeIn delay={200} className="mb-12 md:mb-0">
           <div className="flex items-center">
             <h5 className="mb-2 text-base md:text-1xl">Hi, I&apos;m</h5>
           </div>
-          <div className="flex items-center text-3xl md:text-6xl">
+          <div className="flex items-center text-2xl sm:text-3xl md:text-6xl">
             <h3 className="font-bold text-text">a</h3>
             <h3 ref={feRef} className="inline-block text-accent">
               {isIntersecting && (
@@ -34,7 +34,7 @@ export default function About() {
               )}
             </h3>
           </div>
-          <h3 className="max-w-3xl font-bold text-3xl md:text-6xl text-text mb-4 leading-normal">
+          <h3 className="max-w-3xl font-bold text-2xl sm:text-3xl md:text-6xl text-text mb-4 leading-normal">
             making impact web apps to the world
           </h3>
           <p className="max-w-2xl mt-5 mb-2 text-base md:text-1xl f-icon">

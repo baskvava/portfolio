@@ -58,7 +58,7 @@ export default function Wrapper({ views }: { views: number }) {
   };
 
   return (
-    <main className="max-w-8xl w-full max-auto py-5 px-12">
+    <main className="max-w-8xl w-full max-auto py-5 px-4 md:px-12">
       <div className="max-w-8xl w-full">
         {/* hamburger menu */}
         <nav
@@ -161,7 +161,7 @@ export default function Wrapper({ views }: { views: number }) {
           <div id="techStack">
             <TechStack />
           </div>
-          <footer className="mt-48 flex flex-col items-center justify-center">
+          <footer className="mt-16 md:mt-48 flex flex-col items-center justify-center">
             <span className="font-mono">Contact With Me</span>
             <p className="flex items-center justify-center gap-4 mb-10 mt-5">
               <a href="https://github.com/baskvava" target="_blank">

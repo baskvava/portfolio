@@ -127,7 +127,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <section className="mt-36">
+    <section className="mt-16 md:mt-36">
       <h3 className="text-2xl md:text-4xl font-mono mb-10 md:mb-20">
         Experience
       </h3>

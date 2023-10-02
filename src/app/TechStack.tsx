@@ -78,7 +78,7 @@ export default function TechStack() {
   }, [isIntersecting, forceUpdate]);
 
   return (
-    <section className="mt-64">
+    <section className="mt-16 md:mt-64">
       <h3 className="text-2xl md:text-4xl font-mono mb-10 md:mb-20">
         Tech Stack
       </h3>
