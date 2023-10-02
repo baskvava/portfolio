@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import FadeIn from "react-fade-in";
+import { AiFillLinkedin } from "react-icons/ai";
 
 export default function About() {
   const feRef = useRef<HTMLHeadingElement | null>(null);
@@ -70,7 +71,10 @@ export default function About() {
                   window.open("https://www.linkedin.com/in/ying-hsuan-chen1/");
                 }}
               >
-                <span className="px-4 py-1 whitespace-nowrap">Hire Me</span>
+                <span className="flex items-center justify-center gap-2 px-4 py-1 whitespace-nowrap">
+                  <AiFillLinkedin size="1.2em" />
+                  Hire Me
+                </span>
                 <span className="portfolio-image-ring inline-block absolute">
                   <span className="relative flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
