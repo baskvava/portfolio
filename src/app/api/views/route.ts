@@ -4,7 +4,7 @@ import prisma from "@/lib/prisma";
  * A little bit tricky way, but it works now.
  */
 
-export async function POST() {
+export async function GET() {
   const portfolio = await prisma.portfolio.findUnique({
     where: {
       id: 1,

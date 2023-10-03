@@ -33,8 +33,8 @@ export default function Wrapper({ views }: { views: number }) {
     // formData.append("password", "John123");
 
     await fetch(`/portfolio/api/views`, {
-      method: "POST",
-      body: JSON.stringify({ views: views + 1 }),
+      method: "GET",
+      // body: JSON.stringify({ views: views + 1 }),
       // body: formData,
     });
   }
