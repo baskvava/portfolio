@@ -117,7 +117,6 @@ export default function Experience() {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
-      console.log({ entry });
       setIsIntersecting(entry.isIntersecting);
     });
     if (timelineRef.current) {

@@ -22,8 +22,6 @@ const buttons = [
   { id: "techStack", name: "Tech Stack" },
 ];
 
-// const fetcher = (...args: any) => fetch(...args).then((res) => res.json());
-
 export default function Wrapper() {
   const [isOpen, setIsOpen] = useState(false);
   const arrowRef = useRef<HTMLDivElement | null>(null);
@@ -31,26 +29,10 @@ export default function Wrapper() {
   const { data, error, isLoading } = useSWR(
     "/portfolio/api/views",
     async (url) => {
-      const res = await fetch(url);
+      const res = await fetch(url, { method: "GET" });
       return res.json();
     }
   );
-  console.log({ data });
-
-  async function addViews() {
-    // let formData = new FormData();
-    // const newViews = views + 1;
-    // formData.append("views", newViews.toString());
-    // formData.append("password", "John123");
-
-    const data = await fetch(`/portfolio/api/views`, {
-      method: "GET",
-      // body: JSON.stringify({ views: views + 1 }),
-      // body: formData,
-    });
-    const views = await data.json();
-    console.log({ views });
-  }
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -60,7 +42,6 @@ export default function Wrapper() {
     if (arrowRef.current) {
       observer.observe(arrowRef.current);
     }
-    // addViews();
     return () => observer.disconnect();
   }, []);
 
