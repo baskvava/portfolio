@@ -13,6 +13,7 @@ import {
   AiOutlineEye,
 } from "react-icons/ai";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
+import useSWR from "swr";
 
 const buttons = [
   { id: "about", name: "About" },
@@ -21,10 +22,20 @@ const buttons = [
   { id: "techStack", name: "Tech Stack" },
 ];
 
-export default function Wrapper({ views }: { views: number }) {
+// const fetcher = (...args: any) => fetch(...args).then((res) => res.json());
+
+export default function Wrapper() {
   const [isOpen, setIsOpen] = useState(false);
   const arrowRef = useRef<HTMLDivElement | null>(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
+  const { data, error, isLoading } = useSWR(
+    "/portfolio/api/views",
+    async (url) => {
+      const res = await fetch(url);
+      return res.json();
+    }
+  );
+  console.log({ data });
 
   async function addViews() {
     // let formData = new FormData();
@@ -32,11 +43,13 @@ export default function Wrapper({ views }: { views: number }) {
     // formData.append("views", newViews.toString());
     // formData.append("password", "John123");
 
-    await fetch(`/portfolio/api/views`, {
+    const data = await fetch(`/portfolio/api/views`, {
       method: "GET",
       // body: JSON.stringify({ views: views + 1 }),
       // body: formData,
     });
+    const views = await data.json();
+    console.log({ views });
   }
 
   useEffect(() => {
@@ -47,7 +60,7 @@ export default function Wrapper({ views }: { views: number }) {
     if (arrowRef.current) {
       observer.observe(arrowRef.current);
     }
-    addViews();
+    // addViews();
     return () => observer.disconnect();
   }, []);
 
@@ -177,10 +190,12 @@ export default function Wrapper({ views }: { views: number }) {
             </p>
             <p className="flex gap-2">
               Copyright © ${new Date().getFullYear()} Clara Chen.{" "}
-              <span className="flex items-center justify-center gap-2">
-                <AiOutlineEye size="1.6em" />
-                {views}
-              </span>
+              {!isLoading && !error && (
+                <span className="flex items-center justify-center gap-2">
+                  <AiOutlineEye size="1.6em" />
+                  {data?.views}
+                </span>
+              )}
             </p>
           </footer>
         </div>

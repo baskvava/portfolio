@@ -18,5 +18,5 @@ export async function GET() {
     data: { views: newViews + 1 },
   });
 
-  return Response.json(totalViews);
+  return Response.json({ views: totalViews.views });
 }
