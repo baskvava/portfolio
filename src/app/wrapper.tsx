@@ -27,9 +27,15 @@ export default function Wrapper({ views }: { views: number }) {
   const [isIntersecting, setIsIntersecting] = useState(false);
 
   async function addViews() {
-    await fetch(`/portfolio/api/views/1`, {
-      method: "PUT",
+    // let formData = new FormData();
+    // const newViews = views + 1;
+    // formData.append("views", newViews.toString());
+    // formData.append("password", "John123");
+
+    await fetch(`/portfolio/api/views`, {
+      method: "POST",
       body: JSON.stringify({ views: views + 1 }),
+      // body: formData,
     });
   }
 
@@ -171,10 +177,10 @@ export default function Wrapper({ views }: { views: number }) {
             </p>
             <p className="flex gap-2">
               Copyright © ${new Date().getFullYear()} Clara Chen.{" "}
-              {/* <span className="flex items-center justify-center gap-2">
+              <span className="flex items-center justify-center gap-2">
                 <AiOutlineEye size="1.6em" />
                 {views}
-              </span> */}
+              </span>
             </p>
           </footer>
         </div>

@@ -1,0 +1,18 @@
+// export default function handler(req, res) {
+//   res.status(200).json({ text: "Hello" });
+// }
+
+export async function GET() {
+  // return NextResponse.json({ text: "Hello" });
+  // export async function GET() {
+  //   const res = await fetch('https://data.mongodb-api.com/...', {
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'API-Key': process.env.DATA_API_KEY,
+  //     },
+  //   })
+  //   const data = await res.json()
+
+  return Response.json({ text: "Hello" });
+  // }
+}
