@@ -19,9 +19,9 @@ export const about = {
     url: "https://www.linkedin.com/in/ying-hsuan-chen1/",
     content: "Looking for new Opportunity",
   },
-  porfolioImg: {
+  portfolioImg: {
     imgUrl: "https://avatars.githubusercontent.com/u/23297498?v=4",
-    btnUrl: "https://www.linkedin.com/in/ying-hsuan-chen1/",
+    btnLink: "https://www.linkedin.com/in/ying-hsuan-chen1/",
     actionBtn: {
       icon: <AiFillLinkedin size="1.2em" />,
       content: "Hire Me",
