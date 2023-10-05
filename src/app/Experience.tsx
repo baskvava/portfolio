@@ -70,12 +70,11 @@ const companies = [
         streaming (hls) and React.js
       </>,
       <>
-        Earned totally{" "}
         <span className="underline decoration-wavy decoration-primary text-accent">
-          over $1,000/month income{" "}
+          Reduced 100% time of manual user account creations{" "}
         </span>{" "}
-        by contracting with 1 company and building MVP mockup responsive
-        websites for them in merely 6 months
+        by integrating 3 types auth flow with Firebase - Password Authentication
+        & Email Verification, Phone Number, Google Sign-in
       </>,
     ],
   },
