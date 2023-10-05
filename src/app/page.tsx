@@ -1,5 +1,5 @@
 import prisma from "@/lib/prisma";
-import Wrapper from "./wrapper";
+import Wrapper from "./components/wrapper";
 
 export default async function Home() {
   // const portfolio = await prisma.portfolio.findUnique({

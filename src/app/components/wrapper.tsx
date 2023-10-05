@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import About from "./About";
-import Experience from "./Experience";
-import Projects from "./Projects";
-import TechStack from "./TechStack";
-import ThemeButton from "./ThemeButton";
+import About from "./about";
+import Experience from "./experience";
+import Projects from "./projects";
+import TechStack from "./techStack";
+import ThemeButton from "./themeButton";
 import {
   AiFillGithub,
   AiFillLinkedin,
@@ -14,13 +14,7 @@ import {
 } from "react-icons/ai";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import useSWR from "swr";
-
-const buttons = [
-  { id: "about", name: "About" },
-  { id: "experience", name: "Experience" },
-  { id: "projects", name: "Projects" },
-  { id: "techStack", name: "Tech Stack" },
-];
+import { navbarButtons } from "../../../portfolio.config";
 
 export default function Wrapper() {
   const [isOpen, setIsOpen] = useState(false);
@@ -106,7 +100,7 @@ export default function Wrapper() {
             {isOpen && (
               <div className="absolute left-0 top-0 bg-secondary w-full">
                 <ul className="flex flex-col items-center justify-evenly min-h-[250px]">
-                  {buttons.map(({ id, name }) => (
+                  {navbarButtons.map(({ id, name }) => (
                     <li key={id}>
                       <button
                         className="tab"
@@ -129,7 +123,7 @@ export default function Wrapper() {
           <h5 className="font-mono text-accent text-lg">Clara Chen</h5>
           <div className="hidden md:flex">
             <ul className="flex gap-4 text-text">
-              {buttons.map(({ id, name }) => (
+              {navbarButtons.map(({ id, name }) => (
                 <li key={id}>
                   <button className="tab" onClick={() => scroll(id)}>
                     {name}

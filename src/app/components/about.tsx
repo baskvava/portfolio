@@ -2,11 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import FadeIn from "react-fade-in";
-import { AiFillLinkedin } from "react-icons/ai";
+import { about } from "../../../portfolio.config";
 
 export default function About() {
   const feRef = useRef<HTMLHeadingElement | null>(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
+  const { position, positionDescription, detail, highlight, portfolioImg } =
+    about;
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -30,17 +32,15 @@ export default function About() {
             <h3 className="font-bold text-text">a</h3>
             <h3 ref={feRef} className="inline-block text-accent">
               {isIntersecting && (
-                <div className="type-out font-mono">Frontend Engineer</div>
+                <div className="type-out font-mono">{position}</div>
               )}
             </h3>
           </div>
           <h3 className="max-w-3xl font-bold text-2xl sm:text-3xl xl:text-6xl text-text mb-4 leading-normal">
-            making impact web apps to the world
+            {positionDescription}
           </h3>
           <p className="max-w-2xl mt-5 mb-2 text-base xl:text-1xl f-icon">
-            I&apos;m passionate about the latest front-end technologies and
-            trends, and eager to learn new things. Experience on large-scale
-            system such as Facebook
+            {detail}
           </p>
           <div className="flex items-center">
             <div className="mr-2">
@@ -49,32 +49,36 @@ export default function About() {
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
               </span>
             </div>
-            <a
-              className="text-accent font-mono font-bold"
-              href="https://www.linkedin.com/in/ying-hsuan-chen1/"
-              target="_blank"
-            >
-              Looking for new Opportunity
-            </a>
+            {highlight?.content && (
+              <a
+                className="text-accent font-mono font-bold"
+                href={highlight?.url}
+                target="_blank"
+              >
+                {highlight?.content}
+              </a>
+            )}
           </div>
         </FadeIn>
         <FadeIn delay={1200}>
           <div className="relative w-fit">
             <img
               className="w-52 h-52 rounded-2xl opacity-90 dark:opacity-70"
-              src="https://avatars.githubusercontent.com/u/23297498?v=4"
+              src={portfolioImg?.imgUrl}
             />
             <div className="portfolio-text font-mono tracking-widest">
               <button
                 className="rounded-md shadow ring-2 ring-accent text-accent"
                 onClick={() => {
-                  window.open("https://www.linkedin.com/in/ying-hsuan-chen1/");
+                  window.open(portfolioImg?.btnLink);
                 }}
               >
-                <span className="flex items-center justify-center gap-2 px-4 py-1 whitespace-nowrap">
-                  <AiFillLinkedin size="1.2em" />
-                  Hire Me
-                </span>
+                {portfolioImg?.actionBtn && (
+                  <span className="flex items-center justify-center gap-2 px-4 py-1 whitespace-nowrap">
+                    {portfolioImg.actionBtn.icon}
+                    {portfolioImg.actionBtn?.content}
+                  </span>
+                )}
                 <span className="portfolio-image-ring inline-block absolute">
                   <span className="relative flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
@@ -84,24 +88,6 @@ export default function About() {
               </button>
             </div>
           </div>
-          {/* <div className="portfolio-image w-52 h-52 rounded-2xl">
-            <div className="portfolio-text font-mono tracking-widest">
-              <button
-                className="rounded-md shadow ring-2 ring-text border-text text-text px-6"
-                onClick={() => {
-                  window.open("https://www.linkedin.com/in/ying-hsuan-chen1/");
-                }}
-              >
-                Hire me
-                <span className="portfolio-image-ring inline-block absolute">
-                  <span className="relative flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
-                  </span>
-                </span>
-              </button>
-            </div>
-          </div> */}
         </FadeIn>
       </div>
     </section>

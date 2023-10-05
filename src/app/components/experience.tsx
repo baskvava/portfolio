@@ -2,111 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import FadeIn from "react-fade-in";
-
-const companies = [
-  {
-    compnayName: "Fortinet",
-    title: "Web Developer",
-    time: "Jan, 2023 - Now",
-    description: [
-      <>
-        Led a successful redesign of a React project, leveraging Redux Toolkit,
-        resulting in an{" "}
-        <span className="underline decoration-wavy decoration-primary text-accent">
-          impressive 80% reduction in development time
-        </span>{" "}
-        and significantly improved maintenance efficiency.
-      </>,
-      <>
-        Drove regular code review sessions, providing actionable feedback that
-        led to{" "}
-        <span className="underline decoration-wavy decoration-primary text-accent">
-          reduction in bugs and enhanced codebase stability.
-        </span>
-      </>,
-      <>
-        <span className="underline decoration-wavy decoration-primary text-accent">
-          Led a cross-functional team{" "}
-        </span>
-        in overhauling a legacy Angular project into a performant React
-        application. Integrated Webpack, Prettier, ESLint, and StyleLint,
-        resulting in reduction in bundle size and improvement in initial load
-        times.
-      </>,
-    ],
-  },
-  {
-    compnayName: "Meta (Facebook)",
-    title: "Front End Engineer Intern",
-    time: "May, 2022 - Aug, 2022",
-    description: [
-      <>
-        Built Ads entry point on Facebook, involving{" "}
-        <span className="underline decoration-wavy decoration-primary text-accent">
-          over 100 thousands of users
-        </span>
-        . Built an A/B testing of Ads entry point feature to collect of
-        increasing conversion rate
-      </>,
-      <>
-        Refactored dialog reactions header bar with Relay to improve data
-        retrieve performance, involving
-        <span className="underline decoration-wavy decoration-primary text-accent">
-          {" "}
-          all Facebook users
-        </span>
-        .
-      </>,
-    ],
-  },
-  {
-    compnayName: "Lucid",
-    title: "Senior Front End Enginner",
-    time: "Dec, 2021 - Jul, 2022",
-    description: [
-      <>
-        Improved user experience by supporting autoplay previews and enabling
-        draggable segments trained AI model for e-commerce with http live
-        streaming (hls) and React.js
-      </>,
-      <>
-        <span className="underline decoration-wavy decoration-primary text-accent">
-          Reduced 100% time of manual user account creations{" "}
-        </span>{" "}
-        by integrating 3 types auth flow with Firebase - Password Authentication
-        & Email Verification, Phone Number, Google Sign-in
-      </>,
-    ],
-  },
-  {
-    compnayName: "Garmin",
-    title: "Engineer Staff II",
-    time: "Aug, 2017 - Aug, 2019",
-    description: [
-      <>
-        Built the web application that supports{" "}
-        <span className="underline decoration-wavy decoration-primary text-accent">
-          over 1 million users
-        </span>{" "}
-        to access their activity routes reliably
-      </>,
-      <>
-        Migrated 14 Asia countries historical data{" "}
-        <span className="underline decoration-wavy decoration-primary text-accent">
-          over 700 million records{" "}
-        </span>
-        from MSSQL to MySQL
-      </>,
-      <>
-        <span className="underline decoration-wavy decoration-primary text-accent">
-          Reduced 100% of manual migration time
-        </span>{" "}
-        of users activity data from 14 countries by synchronization cron jobs
-        (Java, Spring Boot, MySQL)
-      </>,
-    ],
-  },
-];
+import { experience } from "../../../portfolio.config";
 
 export default function Experience() {
   const timelineRef = useRef<HTMLDivElement | null>(null);
@@ -139,7 +35,7 @@ export default function Experience() {
           delay={500}
           visible={isIntersecting}
         >
-          {companies.map(({ compnayName, title, time }, idx) => (
+          {experience.map(({ compnayName, title, time }, idx) => (
             <div
               className="flex flex-col items-end justify-end h-full xl:h-fit"
               key={compnayName}
@@ -188,7 +84,7 @@ export default function Experience() {
                 </div>
               </div>
               {/* line */}
-              {idx < companies.length - 1 && (
+              {idx < experience.length - 1 && (
                 <span className="hidden xl:inline-block w-1 h-16 bg-primary mr-3"></span>
               )}
             </div>
@@ -201,7 +97,7 @@ export default function Experience() {
           visible={isIntersecting}
         >
           <div className="flex flex-col items-start">
-            {companies.map(({ compnayName, time, title, description }) => (
+            {experience.map(({ compnayName, time, title, description }) => (
               <section key={compnayName}>
                 {selected === compnayName && (
                   <>

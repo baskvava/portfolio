@@ -3,45 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import FadeIn from "react-fade-in";
 import { BsGithub } from "react-icons/bs";
-
-const cards = [
-  {
-    title: "Portfolio",
-    url: "https://baskvava.github.io/portfolio/",
-    githubUrl: "https://github.com/baskvava/portfolio",
-    imgUrl: "https://baskvava.github.io/portfolio/portfolio.png",
-    disabled: false,
-    description: (
-      <>
-        A high-quality, beautiful portfolio website is visually appealing,
-        well-organized
-      </>
-    ),
-  },
-  {
-    title: "React Video Modal",
-    url: "https://baskvava.github.io/react-video-modal/",
-    githubUrl: "https://github.com/baskvava/react-video-modal",
-    imgUrl: "https://baskvava.github.io/resume/react-video-modal.png",
-    disabled: false,
-    description: (
-      <>
-        Lets you focus video. Without wasting time to optimize the modal events.
-      </>
-    ),
-  },
-  {
-    title: "Facebook Dialog",
-    imgUrl: "https://baskvava.github.io/resume/facebook-dialog.png",
-    disabled: true,
-    description: (
-      <>
-        Refactor the Facebook Dialog with Relay to improve the data retrieve
-        performance
-      </>
-    ),
-  },
-];
+import { projects } from "../../../portfolio.config";
 
 export default function Projects() {
   const projectRef = useRef<HTMLDivElement | null>(null);
@@ -70,7 +32,7 @@ export default function Projects() {
           visible={isIntersecting}
         >
           {/* card */}
-          {cards.map(
+          {projects.map(
             ({ title, url, imgUrl, description, disabled, githubUrl }) => (
               <div
                 key={title}
