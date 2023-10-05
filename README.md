@@ -24,11 +24,13 @@ There are six sections
 
 - techStacks : customize your title such as tooltip, img url, skill percentage
 
-## Welcome to Fork and PR
+## Welcome to Fork, PR, and Suggestions
 
 - Welcome to fork this project to customize as your own if you like.
 
 - Welcome to creat PR for this portfolio to improve it.
+
+- Welcome to provide any suggestions to improvie this project.
 
 ## Getting Started
 
