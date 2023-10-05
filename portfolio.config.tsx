@@ -180,6 +180,9 @@ export const experience = [
 export const projects = [
   {
     title: "Portfolio",
+    /**
+     * @todo: this is the link url
+     */
     url: "https://baskvava.github.io/portfolio/",
     githubUrl: "https://github.com/baskvava/portfolio",
     imgUrl: "https://baskvava.github.io/portfolio/portfolio.png",
@@ -216,6 +219,9 @@ export const projects = [
   },
 ];
 
+/**
+ * @todo: will make it as optional
+ */
 /**
  * @techStacks
  * custom your tech stack section

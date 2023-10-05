@@ -2,25 +2,27 @@
 
 This is a responsive portfolio project, build by Next.js and Tailwind CSS.
 
-> Easy to replace your own data as your personal website
+> Only a few minuts to replace your own content as your personal website
 
 [<img src="https://baskvava.github.io/portfolio/portfolio-3.png">](https://baskvava.github.io/portfolio/)
 
 ## Customize Portfolio Data
 
-> Only need to update the file `portfolio.config.tsx` under the root
+> Update the file `portfolio.config.tsx` under the root
 
 There are five sections
 
-- navbarButtons
+- navbarButtons : Customize your Navbar Buttons on the top right
 
-- about
+- meta : Customize your website title, footer links, and copyright
 
-- experience
+- about : Customize your position/title, description, details, action buttons, porfolio img
 
-- projects
+- experience : customize your company Name, title, timeline, and detail
 
-- techStacks
+- projects : customize your title, link, github url, cover img url, and description
+
+- techStacks : customize your title such as tooltip, img url, skill percentage
 
 ## Welcome to Fork and PR
 
