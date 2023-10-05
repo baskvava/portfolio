@@ -158,7 +158,7 @@ export default function Wrapper() {
             <span className="font-mono">Contact With Me</span>
             <p className="flex items-center justify-center gap-4 mb-10 mt-5">
               {meta?.footer?.links.map(({ link, icon }) => (
-                <a href={link} target="_blank">
+                <a key={link} href={link} target="_blank">
                   {icon}
                 </a>
               ))}
