@@ -1,10 +1,42 @@
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+
+/**
+ * @navbarButtons
+ * custom your navbar buttons section
+ */
+export const navbarButtons = [
+  { id: "about", name: "About" },
+  { id: "experience", name: "Experience" },
+  { id: "projects", name: "Projects" },
+  { id: "techStack", name: "Tech Stack" },
+];
+
+/**
+ * @meta
+ * custom your navbar meta section
+ */
+export const meta = {
+  header: { title: "Clara Chen" },
+  githubLink: "https://github.com/baskvava",
+  footer: {
+    links: [
+      {
+        link: "https://github.com/baskvava",
+        icon: <AiFillGithub size="1.6em" />,
+      },
+      {
+        link: "https://www.linkedin.com/in/ying-hsuan-chen1/",
+        icon: <AiFillLinkedin size="1.6em" />,
+      },
+    ],
+    copyright: <>Copyright © {new Date().getFullYear()} Clara Chen. </>,
+  },
+};
+
 /**
  * @about
- * custom your experience section
+ * custom your about section
  */
-
-import { AiFillLinkedin } from "react-icons/ai";
-
 export const about = {
   position: "Frontend Engineer",
   positionDescription: "making impact web apps to the world",
@@ -19,6 +51,9 @@ export const about = {
     url: "https://www.linkedin.com/in/ying-hsuan-chen1/",
     content: "Looking for new Opportunity",
   },
+  /**
+   * @todo: will make it as optional
+   */
   portfolioImg: {
     imgUrl: "https://avatars.githubusercontent.com/u/23297498?v=4",
     btnLink: "https://www.linkedin.com/in/ying-hsuan-chen1/",
@@ -179,17 +214,6 @@ export const projects = [
       </>
     ),
   },
-];
-
-/**
- * @navbarButtons
- * custom your navbar buttons section
- */
-export const navbarButtons = [
-  { id: "about", name: "About" },
-  { id: "experience", name: "Experience" },
-  { id: "projects", name: "Projects" },
-  { id: "techStack", name: "Tech Stack" },
 ];
 
 /**

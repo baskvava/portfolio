@@ -14,19 +14,19 @@ import {
 } from "react-icons/ai";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import useSWR from "swr";
-import { navbarButtons } from "../../../portfolio.config";
+import { meta, navbarButtons } from "../../../portfolio.config";
 
 export default function Wrapper() {
   const [isOpen, setIsOpen] = useState(false);
   const arrowRef = useRef<HTMLDivElement | null>(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
-  const { data, error, isLoading } = useSWR(
-    "/portfolio/api/views",
-    async (url) => {
-      const res = await fetch(url, { method: "GET" });
-      return res.json();
-    }
-  );
+  // const { data, error, isLoading } = useSWR(
+  //   "/portfolio/api/views",
+  //   async (url) => {
+  //     const res = await fetch(url, { method: "GET" });
+  //     return res.json();
+  //   }
+  // );
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -67,7 +67,9 @@ export default function Wrapper() {
             .join(" ")}
         >
           {!isOpen && (
-            <h5 className="font-mono text-accent text-lg">Clara Chen</h5>
+            <h5 className="font-mono text-accent text-lg">
+              {meta.header?.title}
+            </h5>
           )}
 
           <section className="md:hidden flex text-text">
@@ -81,7 +83,7 @@ export default function Wrapper() {
                 <div className="flex items-center justify-center gap-4">
                   <ThemeButton />
                   <a
-                    href="https://github.com/baskvava"
+                    href={meta.githubLink}
                     target="_blank"
                     onClick={(e) => {
                       e.stopPropagation();
@@ -120,7 +122,9 @@ export default function Wrapper() {
         </nav>
         {/* normal menu */}
         <nav className="hidden h-fit md:flex justify-between items-center">
-          <h5 className="font-mono text-accent text-lg">Clara Chen</h5>
+          <h5 className="font-mono text-accent text-lg">
+            {meta.header?.title}
+          </h5>
           <div className="hidden md:flex">
             <ul className="flex gap-4 text-text">
               {navbarButtons.map(({ id, name }) => (
@@ -132,7 +136,7 @@ export default function Wrapper() {
               ))}
             </ul>
             <ThemeButton />
-            <a href="https://github.com/baskvava" target="_blank">
+            <a href={meta.githubLink} target="_blank">
               <AiFillGithub size="1.6em" />
             </a>
           </div>
@@ -153,24 +157,20 @@ export default function Wrapper() {
           <footer className="mt-16 md:mt-48 flex flex-col items-center justify-center">
             <span className="font-mono">Contact With Me</span>
             <p className="flex items-center justify-center gap-4 mb-10 mt-5">
-              <a href="https://github.com/baskvava" target="_blank">
-                <AiFillGithub size="1.6em" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ying-hsuan-chen1/"
-                target="_blank"
-              >
-                <AiFillLinkedin size="1.6em" />
-              </a>
+              {meta?.footer?.links.map(({ link, icon }) => (
+                <a href={link} target="_blank">
+                  {icon}
+                </a>
+              ))}
             </p>
             <p className="flex gap-2">
-              Copyright © ${new Date().getFullYear()} Clara Chen.{" "}
-              {!isLoading && !error && (
+              {meta?.footer?.copyright}
+              {/* {!isLoading && !error && (
                 <span className="flex items-center justify-center gap-2">
                   <AiOutlineEye size="1.6em" />
                   {data?.views}
                 </span>
-              )}
+              )} */}
             </p>
           </footer>
         </div>
