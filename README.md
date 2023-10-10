@@ -28,9 +28,9 @@ There are six sections
 
 - Welcome to fork this project to customize as your own if you like.
 
-- Welcome to creat PR for this portfolio to improve it.
+- Welcome to create PR for this portfolio to improve it.
 
-- Welcome to provide any suggestions to improvie this project.
+- Welcome to provide any suggestions to improve this project.
 
 ## Getting Started
 
