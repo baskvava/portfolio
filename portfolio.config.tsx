@@ -9,6 +9,7 @@ export const navbarButtons = [
   { id: "experience", name: "Experience" },
   { id: "projects", name: "Projects" },
   { id: "techStack", name: "Tech Stack" },
+  { id: "blog", name: "Blog", link: "https://baskvava.github.io/react-epic/" },
 ];
 
 /**
@@ -193,6 +194,14 @@ export const projects = [
         well-organized
       </>
     ),
+  },
+  {
+    title: "React Epic (Blog)",
+    url: "https://baskvava.github.io/react-epic/",
+    githubUrl: "https://github.com/baskvava/react-epic",
+    imgUrl: "https://baskvava.github.io/react-epic/readme-2.png",
+    disabled: false,
+    description: <>Demo how to create common react components from scratch</>,
   },
   {
     title: "React Video Modal",

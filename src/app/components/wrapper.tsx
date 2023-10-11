@@ -127,11 +127,17 @@ export default function Wrapper() {
           </h5>
           <div className="hidden md:flex">
             <ul className="flex gap-4 text-text">
-              {navbarButtons.map(({ id, name }) => (
+              {navbarButtons.map(({ id, name, link }) => (
                 <li key={id}>
-                  <button className="tab" onClick={() => scroll(id)}>
-                    {name}
-                  </button>
+                  {link ? (
+                    <button className="tab" onClick={() => window.open(link)}>
+                      {name}
+                    </button>
+                  ) : (
+                    <button className="tab" onClick={() => scroll(id)}>
+                      {name}
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>
