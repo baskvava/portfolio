@@ -10,7 +10,7 @@ This is a responsive portfolio project, build by Next.js and Tailwind CSS.
 
 > Update the file `portfolio.config.tsx` under the root
 
-There are five sections
+There are six sections
 
 - navbarButtons : Customize your Navbar Buttons on the top right
 
@@ -24,11 +24,13 @@ There are five sections
 
 - techStacks : customize your title such as tooltip, img url, skill percentage
 
-## Welcome to Fork and PR
+## Welcome to Fork, PR, and Suggestions
 
 - Welcome to fork this project to customize as your own if you like.
 
 - Welcome to creat PR for this portfolio to improve it.
+
+- Welcome to provide any suggestions to improvie this project.
 
 ## Getting Started
 
