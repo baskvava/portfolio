@@ -58,7 +58,11 @@ export default function Projects() {
                     <div className="flex justify-between mb-2">
                       <h5 className="font-mono text-lg text-accent">{title}</h5>
                       {!disabled && (
-                        <a href={githubUrl} target="_blank">
+                        <a
+                          href={githubUrl}
+                          className="p-0.5 outline-dashed outline-1 outline-offset-2 outline-background hover:outline-accent rounded-full"
+                          target="_blank"
+                        >
                           <BsGithub size="1.6em" />
                         </a>
                       )}

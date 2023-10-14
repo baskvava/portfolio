@@ -60,35 +60,37 @@ export default function About() {
             )}
           </div>
         </FadeIn>
-        <FadeIn delay={1200}>
-          <div className="relative w-fit">
-            <img
-              className="w-52 h-52 rounded-2xl opacity-90 dark:opacity-70"
-              src={portfolioImg?.imgUrl}
-            />
-            <div className="portfolio-text font-mono tracking-widest">
-              <button
-                className="rounded-md shadow ring-2 ring-accent text-accent"
-                onClick={() => {
-                  window.open(portfolioImg?.btnLink);
-                }}
-              >
-                {portfolioImg?.actionBtn && (
-                  <span className="flex items-center justify-center gap-2 px-4 py-1 whitespace-nowrap">
-                    {portfolioImg.actionBtn.icon}
-                    {portfolioImg.actionBtn?.content}
+        {portfolioImg && (
+          <FadeIn delay={1200}>
+            <div className="relative w-fit">
+              <img
+                className="w-52 h-52 rounded-2xl opacity-90 dark:opacity-70"
+                src={portfolioImg?.imgUrl}
+              />
+              <div className="portfolio-text font-mono tracking-widest">
+                <button
+                  className="rounded-md shadow ring-2 ring-accent text-accent"
+                  onClick={() => {
+                    window.open(portfolioImg?.btnLink);
+                  }}
+                >
+                  {portfolioImg?.actionBtn && (
+                    <span className="flex items-center justify-center gap-2 px-4 py-1 whitespace-nowrap">
+                      {portfolioImg.actionBtn.icon}
+                      {portfolioImg.actionBtn?.content}
+                    </span>
+                  )}
+                  <span className="portfolio-image-ring inline-block absolute">
+                    <span className="relative flex h-3 w-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+                    </span>
                   </span>
-                )}
-                <span className="portfolio-image-ring inline-block absolute">
-                  <span className="relative flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
-                  </span>
-                </span>
-              </button>
+                </button>
+              </div>
             </div>
-          </div>
-        </FadeIn>
+          </FadeIn>
+        )}
       </div>
     </section>
   );

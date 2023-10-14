@@ -17,7 +17,14 @@ export const navbarButtons = [
  * custom your navbar meta section
  */
 export const meta = {
-  header: { title: "Clara Chen" },
+  header: {
+    title: "Clara Chen",
+    actionBtn: {
+      icon: <AiFillLinkedin size="1.2em" />,
+      link: "https://www.linkedin.com/in/ying-hsuan-chen1/",
+      content: "Hire Me",
+    },
+  },
   githubLink: "https://github.com/baskvava",
   footer: {
     links: [
@@ -55,14 +62,14 @@ export const about = {
   /**
    * @todo: will make it as optional
    */
-  portfolioImg: {
-    imgUrl: "https://avatars.githubusercontent.com/u/23297498?v=4",
-    btnLink: "https://www.linkedin.com/in/ying-hsuan-chen1/",
-    actionBtn: {
-      icon: <AiFillLinkedin size="1.2em" />,
-      content: "Hire Me",
-    },
-  },
+  // portfolioImg: {
+  //   imgUrl: "https://avatars.githubusercontent.com/u/23297498?v=4",
+  //   btnLink: "https://www.linkedin.com/in/ying-hsuan-chen1/",
+  //   actionBtn: {
+  //     icon: <AiFillLinkedin size="1.2em" />,
+  //     content: "Hire Me",
+  //   },
+  // },
 };
 
 /**

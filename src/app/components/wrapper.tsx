@@ -52,7 +52,7 @@ export default function Wrapper() {
   };
 
   return (
-    <main className="max-w-8xl w-full max-auto py-5 px-4 md:px-12">
+    <main className="max-w-8xl w-full max-auto py-5 px-4 md:px-12 md:pt-0">
       <div className="max-w-8xl w-full">
         {/* hamburger menu */}
         <nav
@@ -62,14 +62,38 @@ export default function Wrapper() {
             "h-5",
             !isOpen ? "justify-between" : "justify-end",
             "items-center",
+            "pt-5",
           ]
             .filter(Boolean)
             .join(" ")}
         >
           {!isOpen && (
-            <h5 className="font-mono text-accent text-lg">
-              {meta.header?.title}
-            </h5>
+            <div className="flex">
+              <h5 className="font-mono text-accent text-lg">
+                {meta.header?.title}
+              </h5>
+              <div className="relative font-mono tracking-widest ml-4">
+                <button
+                  className="rounded-md shadow ring-2 ring-primary text-text bg-primary"
+                  onClick={() => {
+                    window.open(meta.header.actionBtn?.link);
+                  }}
+                >
+                  {meta.header?.actionBtn && (
+                    <span className="flex items-center justify-center gap-2 px-4 py-1 whitespace-nowrap text-sm">
+                      {meta.header.actionBtn.icon}
+                      {meta.header.actionBtn?.content}
+                    </span>
+                  )}
+                  <span className="portfolio-image-ring inline-block absolute">
+                    <span className="relative flex h-3 w-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </div>
           )}
 
           <section className="md:hidden flex text-text">
@@ -121,9 +145,30 @@ export default function Wrapper() {
           </section>
         </nav>
         {/* normal menu */}
-        <nav className="hidden h-fit md:flex justify-between items-center">
-          <h5 className="font-mono text-accent text-lg">
+        <nav className="hidden h-fit md:flex justify-between items-center py-5">
+          <h5 className="font-mono text-accent text-lg flex gap-8">
             {meta.header?.title}
+            <div className="relative font-mono tracking-widest mr-4">
+              <button
+                className="rounded-md shadow ring-2 ring-primary text-text bg-primary"
+                onClick={() => {
+                  window.open(meta.header.actionBtn?.link);
+                }}
+              >
+                {meta.header?.actionBtn && (
+                  <span className="flex items-center justify-center gap-2 px-4 py-1 whitespace-nowrap text-sm">
+                    {meta.header.actionBtn.icon}
+                    {meta.header.actionBtn?.content}
+                  </span>
+                )}
+                <span className="portfolio-image-ring inline-block absolute">
+                  <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+                  </span>
+                </span>
+              </button>
+            </div>
           </h5>
           <div className="hidden md:flex">
             <ul className="flex gap-4 text-text">
