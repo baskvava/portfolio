@@ -16,7 +16,7 @@ There are six sections
 
 - meta : Customize your website title, footer links, and copyright
 
-- about : Customize your position/title, description, details, action buttons, porfolio img
+- about : Customize your position/title, description, details, action buttons
 
 - experience : customize your company Name, title, timeline, and detail
 

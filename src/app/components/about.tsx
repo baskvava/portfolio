@@ -60,7 +60,7 @@ export default function About() {
             )}
           </div>
         </FadeIn>
-        {portfolioImg && (
+        {/* {portfolioImg && (
           <FadeIn delay={1200}>
             <div className="relative w-fit">
               <img
@@ -90,7 +90,7 @@ export default function About() {
               </div>
             </div>
           </FadeIn>
-        )}
+        )} */}
       </div>
     </section>
   );
