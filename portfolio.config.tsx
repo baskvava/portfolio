@@ -207,7 +207,7 @@ export const projects = [
     title: "React Video Modal",
     url: "https://baskvava.github.io/react-video-modal/",
     githubUrl: "https://github.com/baskvava/react-video-modal",
-    imgUrl: "https://baskvava.github.io/resume/react-video-modal.png",
+    imgUrl: "/portfolio/react-video-modal.png",
     disabled: false,
     description: (
       <>
