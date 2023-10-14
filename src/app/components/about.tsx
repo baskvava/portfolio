@@ -7,8 +7,7 @@ import { about } from "../../../portfolio.config";
 export default function About() {
   const feRef = useRef<HTMLHeadingElement | null>(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
-  const { position, positionDescription, detail, highlight, portfolioImg } =
-    about;
+  const { position, positionDescription, detail, highlight } = about;
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
