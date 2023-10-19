@@ -4,7 +4,7 @@ This is a responsive portfolio project, build by Next.js and Tailwind CSS.
 
 > Only a few minuts to replace your own content as your personal website
 
-[<img src="https://baskvava.github.io/portfolio/portfolio-3.png">](https://baskvava.github.io/portfolio/)
+![Alt Text](https://baskvava.github.io/portfolio/portfolio.gif)
 
 ## Customize Portfolio Data
 
