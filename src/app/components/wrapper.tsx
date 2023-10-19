@@ -68,43 +68,43 @@ export default function Wrapper() {
             .join(" ")}
         >
           {!isOpen && (
-            <div className="flex">
+            <div className="flex flex-col gap-3 justify-start">
               <h5 className="font-mono text-accent text-lg">
                 {meta.header?.title}
               </h5>
-              <div className="relative font-mono tracking-widest ml-4">
-                <button
-                  className="rounded-md shadow ring-2 ring-primary text-text bg-primary"
-                  onClick={() => {
-                    window.open(meta.header.actionBtn?.link);
-                  }}
-                >
-                  {meta.header?.actionBtn && (
-                    <span className="flex items-center justify-center gap-2 px-4 py-1 whitespace-nowrap text-sm">
-                      {meta.header.actionBtn.icon}
-                      {meta.header.actionBtn?.content}
-                    </span>
-                  )}
-                  <span className="portfolio-image-ring inline-block absolute">
-                    <span className="relative flex h-3 w-3">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
-                    </span>
-                  </span>
-                </button>
-              </div>
             </div>
           )}
 
           <section className="md:hidden flex text-text">
-            <button
+            <div
               className="space-y-2 z-50"
               onClick={() => {
                 setIsOpen(!isOpen);
               }}
             >
               {!isOpen ? (
-                <div className="flex items-center justify-center gap-4">
+                <div className="flex items-center justify-center gap-4 text-xs">
+                  <div className="relative font-mono tracking-widest">
+                    <button
+                      className="rounded-md shadow ring-2 ring-primary text-text bg-primary"
+                      onClick={() => {
+                        window.open(meta.header.actionBtn?.link);
+                      }}
+                    >
+                      {meta.header?.actionBtn && (
+                        <span className="flex items-center justify-center gap-2 px-4 py-1 whitespace-nowrap text-sm">
+                          {meta.header.actionBtn.icon}
+                          {meta.header.actionBtn?.content}
+                        </span>
+                      )}
+                      <span className="portfolio-image-ring inline-block absolute">
+                        <span className="relative flex h-3 w-3">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+                        </span>
+                      </span>
+                    </button>
+                  </div>
                   <ThemeButton />
                   <a
                     href={meta.githubLink}
@@ -120,7 +120,7 @@ export default function Wrapper() {
               ) : (
                 <RxCross1 size="1.2em" />
               )}
-            </button>
+            </div>
 
             {/* open menu */}
             {isOpen && (
@@ -148,6 +148,8 @@ export default function Wrapper() {
         <nav className="hidden h-fit md:flex justify-between items-center py-5">
           <h5 className="font-mono text-accent text-lg flex gap-8">
             {meta.header?.title}
+          </h5>
+          <div className="hidden md:flex">
             <div className="relative font-mono tracking-widest mr-4">
               <button
                 className="rounded-md shadow ring-2 ring-primary text-text bg-primary"
@@ -169,8 +171,6 @@ export default function Wrapper() {
                 </span>
               </button>
             </div>
-          </h5>
-          <div className="hidden md:flex">
             <ul className="flex gap-4 text-text">
               {navbarButtons.map(({ id, name, link }) => (
                 <li key={id}>
