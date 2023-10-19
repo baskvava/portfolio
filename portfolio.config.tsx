@@ -1,6 +1,15 @@
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
 /**
+ * @head
+ * custom your meta data in head
+ */
+export const head = {
+  title: "Clara Chen",
+  description: "Clara's Portfolio",
+};
+
+/**
  * @navbarButtons
  * custom your navbar buttons section
  */

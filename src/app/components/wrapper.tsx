@@ -6,27 +6,14 @@ import Experience from "./experience";
 import Projects from "./projects";
 import TechStack from "./techStack";
 import ThemeButton from "./themeButton";
-import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiOutlineArrowUp,
-  AiOutlineEye,
-} from "react-icons/ai";
+import { AiFillGithub, AiOutlineArrowUp } from "react-icons/ai";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
-import useSWR from "swr";
 import { meta, navbarButtons } from "../../../portfolio.config";
 
 export default function Wrapper() {
   const [isOpen, setIsOpen] = useState(false);
   const arrowRef = useRef<HTMLDivElement | null>(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
-  // const { data, error, isLoading } = useSWR(
-  //   "/portfolio/api/views",
-  //   async (url) => {
-  //     const res = await fetch(url, { method: "GET" });
-  //     return res.json();
-  //   }
-  // );
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {

@@ -2,13 +2,13 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Providers } from "./providers";
-import { meta } from "../../portfolio.config";
+import { head } from "../../portfolio.config";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: meta.header.title,
-  description: meta.header.description,
+  title: head.title,
+  description: head.description,
 };
 
 export default function RootLayout({
